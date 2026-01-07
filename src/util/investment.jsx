@@ -14,10 +14,13 @@ export function calculateInvestmentResults({
   let investmentValue = initialInvestment;
 
   for (let i = 0; i < duration; i++) {
+    const currYear = new Date().getFullYear();
+    console.log(currYear);
     const interestEarnedInYear = investmentValue * (expectedReturn / 100);
     investmentValue += interestEarnedInYear + annualInvestment;
     annualData.push({
-      year: i + 1, // year identifier
+      year: currYear + i, // year identifier
+      yearIndex: i + 1,
       interest: interestEarnedInYear, // the amount of interest earned in this year
       valueEndOfYear: investmentValue, // investment value at end of year
       annualInvestment: annualInvestment, // investment added in this year
