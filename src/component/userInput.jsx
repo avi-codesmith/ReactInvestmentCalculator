@@ -28,7 +28,7 @@ export default function UserInput({ userInput, onChangeFunc }) {
 
       <div className="input-group">
         <div>
-          <label>expected return (%)</label>
+          <label>expected return (1 - 100%)</label>
           <input
             type="number"
             required
