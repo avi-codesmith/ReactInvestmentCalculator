@@ -11,6 +11,11 @@ export default function Result({ inputValues }) {
 
   console.log(results);
 
+  const initialInvestment =
+    results[0].valueEndOfYear -
+    results[0].interest -
+    results[0].annualInvestment;
+
   return (
     <>
       <table id="result">
@@ -34,19 +39,20 @@ export default function Result({ inputValues }) {
                 <td>₹ {Math.floor(arr.interest)}</td>
 
                 <td>
-                  ₹{" "}
+                  ₹{""}
                   {Math.floor(
                     arr.valueEndOfYear -
-                      (inputValues.initialInvestment +
-                        arr.annualInvestment * arr.yearIndex)
+                      arr.annualInvestment * arr.yearIndex -
+                      initialInvestment
                   )}
                 </td>
-
                 <td>
-                  ₹{" "}
+                  ₹{""}
                   {Math.floor(
-                    inputValues.initialInvestment +
-                      arr.annualInvestment * arr.yearIndex
+                    arr.valueEndOfYear -
+                      (arr.valueEndOfYear -
+                        arr.annualInvestment * arr.yearIndex -
+                        initialInvestment)
                   )}
                 </td>
               </tr>
