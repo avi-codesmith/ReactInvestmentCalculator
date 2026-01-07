@@ -3,7 +3,7 @@ export default function UserInput({ userInput, onChangeFunc }) {
     <div id="user-input">
       <div className="input-group">
         <div>
-          <label>initial investment</label>
+          <label>initial investment (up to 10cr)</label>
           <input
             type="number"
             required
@@ -14,7 +14,7 @@ export default function UserInput({ userInput, onChangeFunc }) {
           />
         </div>
         <div>
-          <label>annual investment</label>
+          <label>annual investment(up to 100cr)</label>
           <input
             type="number"
             required
@@ -28,7 +28,7 @@ export default function UserInput({ userInput, onChangeFunc }) {
 
       <div className="input-group">
         <div>
-          <label>expected return</label>
+          <label>expected return (%)</label>
           <input
             type="number"
             required
@@ -39,7 +39,7 @@ export default function UserInput({ userInput, onChangeFunc }) {
           />
         </div>
         <div>
-          <label>duration</label>
+          <label>duration(1 - 100years)</label>
           <input
             type="number"
             required

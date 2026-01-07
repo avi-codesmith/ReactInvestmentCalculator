@@ -12,6 +12,14 @@ function App() {
     duration: 10,
   });
 
+  const isValidInput =
+    userInput.duration >= 1 &&
+    userInput.expectedReturn >= 1 &&
+    userInput.duration <= 100 &&
+    userInput.expectedReturn <= 100 &&
+    userInput.initialInvestment <= 10000000 &&
+    userInput.annualInvestment <= 100000000;
+
   function handleInput(inputIdentifier, newValue) {
     setUserInput((prev) => ({
       ...prev,
@@ -23,7 +31,8 @@ function App() {
     <>
       <Header />
       <UserInput userInput={userInput} onChangeFunc={handleInput} />
-      <Result inputValues={userInput} />
+      {!isValidInput && <p id="warning">Please Enter Data Under The Limits!</p>}
+      {isValidInput && <Result inputValues={userInput} />}
     </>
   );
 }

@@ -94,3 +94,9 @@ body {
   font-size: 0.6rem;
   color: #c2e9e0;
 }
+
+#warning {
+  text-align: center;
+  color: rgb(238, 51, 51);
+  font-weight: 600;
+}
